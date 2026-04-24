@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employees</title>
+  </head>
+  <body>
+    {% if emp_list %}
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Age</th>
+        <th>Start Date</th>
+      </thead>
+      {%for e in emp_list%}
+      <tr>
+        <td>{{e.emp_id}}</td>
+        <td>{{e.emp_name}}</td>
+        <td>{{e.emp_dept}}</td>
+        <td>{{e.emp_age}}</td>
+        <td>{{e.emp_start_date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else%}
+    <p>No Employee Records!</p>
+    {% endif%}
+  </body>
+</html>
